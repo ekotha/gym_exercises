@@ -5,7 +5,6 @@ import HorizontalScrollbar from './HorizontalScrollbar';
 
 const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState('');
-
   const [bodyParts, setBodyParts] = useState([]);
 
   useEffect(() => {
@@ -28,6 +27,8 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
           || item.bodyPart.toLowerCase().includes(search)
           || item.equipment.toLowerCase().includes(search),
       );
+
+      window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
 
       setSearch = ('');
       setExercises(searchedExercises);
@@ -76,7 +77,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         </Button>
       </Box>
       <Box sx={{ position: 'relative', width: '100%', p: '20px' }}>
-        <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} />
+        <HorizontalScrollbar data={bodyParts} setBodyPart={setBodyPart} bodyPart={bodyPart} />
 
       </Box>
     </Stack>
