@@ -10,9 +10,9 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 
   useEffect(() => {
     const fetchExercisesData = async () => {
-      const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions)
+      const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
 
-      setBodyParts(['all', ...bodyPartsData])
+      setBodyParts(['all', ...bodyPartsData]);
     }
     fetchExercisesData();
   }, [])
@@ -24,13 +24,13 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 
       const searchedExercises = exercisesData.filter(
         (item) => item.name.toLowerCase().includes(search)
-              || item.target.toLowerCase().includes(search)
-              || item.bodyPart.toLowerCase().includes(search)  
-              || item.equipment.toLowerCase().includes(search),
-      )
+          || item.target.toLowerCase().includes(search)
+          || item.bodyPart.toLowerCase().includes(search)
+          || item.equipment.toLowerCase().includes(search),
+      );
 
       setSearch = ('');
-      setExercises = (searchedExercises);
+      setExercises(searchedExercises);
     }
 
   }
@@ -68,7 +68,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
             fontSize: { lg: '20px', xs: '14px' },
             height: '56px',
             position: "absolute",
-            right: '0'
+            right: '0px'
           }}
           onClick={handleSearch}
         >
@@ -83,4 +83,4 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   )
 }
 
-export default SearchExercises
+export default SearchExercises;
