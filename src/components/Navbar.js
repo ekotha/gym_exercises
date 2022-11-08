@@ -33,7 +33,6 @@ const Navbar = () => {
           color: '#3A1212'
         }}>Exercises</a>
       </Stack>
-      <div>Navbar</div>
 
     </Stack>
 
